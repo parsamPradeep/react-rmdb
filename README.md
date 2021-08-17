@@ -1,3 +1,1 @@
-# react-rmdb
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-rmdb)
+Basic React project by freecodecamp
