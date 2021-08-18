@@ -1,5 +1,5 @@
 const API_URL = 'https://api.themoviedb.org/3/';
-const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = 'ac653d38dc94278cb8fcab045dcff3ae';
 
 const SEARCH_BASE_URL = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=`;
 const POPULAR_BASE_URL = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US`;
@@ -24,5 +24,5 @@ export {
   POSTER_SIZE,
   REQUEST_TOKEN_URL,
   LOGIN_URL,
-  SESSION_ID_URL,
+  SESSION_ID_URL
 };
