@@ -9,8 +9,16 @@ import Thumb from './Thumb';
 import NoImage from '../images/no-image.svg';
 import Spinner from './Spinner';
 import SearchBar from './SearchBar';
+import Button from './Button';
 const Home = () => {
-  const { state, loading, error, searchTerm, setSearchTerm } = useHomeFetch();
+  const {
+    state,
+    loading,
+    error,
+    searchTerm,
+    setSearchTerm,
+    setIsLoadingMore
+  } = useHomeFetch();
 
   console.log(state);
 
@@ -40,7 +48,10 @@ const Home = () => {
           />
         ))}
       </Grid>
-      <Spinner />
+      {loading && <Spinner />}
+      {state.page < state.total_pages && !loading && (
+        <Button text="Load More" callback={() => setIsLoadingMore(true)} />
+      )}
     </>
   );
 };
