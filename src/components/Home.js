@@ -10,13 +10,13 @@ import NoImage from '../images/no-image.svg';
 import Spinner from './Spinner';
 import SearchBar from './SearchBar';
 const Home = () => {
-  const { state, loading, error, setSearchTearm } = useHomeFetch();
+  const { state, loading, error, searchTerm, setSearchTerm } = useHomeFetch();
 
   console.log(state);
 
   return (
     <>
-      {state.results[0] ? (
+      {!searchTerm && state.results[0] ? (
         <HeroImage
           image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${
             state.results[0].backdrop_path
@@ -25,8 +25,8 @@ const Home = () => {
           text={state.results[0].overview}
         />
       ) : null}
-      <SearchBar setSearchTearm={setSearchTearm} />
-      <Grid header="Popular Movies">
+      <SearchBar setSearchTerm={setSearchTerm} />
+      <Grid header={searchTerm ? 'Search results' : 'Popular Movies'}>
         {state.results.map(movie => (
           <Thumb
             key={movie.id}
