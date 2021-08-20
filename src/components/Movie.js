@@ -6,6 +6,7 @@ import Spinner from './Spinner';
 import BreadCrum from './BreadCrumb';
 import NoImage from '../images/no-image.svg';
 import { useMovieFecth } from '../hooks/useMovieFetch';
+import MovieInfo from './MovieInfo';
 
 const Movie = () => {
   const { movieId } = useParams();
@@ -17,6 +18,7 @@ const Movie = () => {
   return (
     <>
       <BreadCrum movieTitle={movie.original_title} />
+      <MovieInfo movie={movie} />
     </>
   );
 };
