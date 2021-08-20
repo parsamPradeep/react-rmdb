@@ -1,5 +1,6 @@
 import React from 'react';
 import Thumb from '../Thumb';
+import PropTypes from 'prop-types';
 
 import { POSTER_SIZE, IMAGE_BASE_URL } from '../../config';
 import NoImage from '../../images/no-image.svg';
@@ -38,4 +39,7 @@ const MovieInfo = ({ movie }) => (
   </Wrapper>
 );
 
+MovieInfo.prototypes={
+  movie: PropTypes.object,
+}
 export default MovieInfo;
