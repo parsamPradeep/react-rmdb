@@ -7,6 +7,7 @@ import BreadCrum from './BreadCrumb';
 import NoImage from '../images/no-image.svg';
 import { useMovieFecth } from '../hooks/useMovieFetch';
 import MovieInfo from './MovieInfo';
+import MovieInfoBar from './MovieInfoBar';
 
 const Movie = () => {
   const { movieId } = useParams();
@@ -19,6 +20,11 @@ const Movie = () => {
     <>
       <BreadCrum movieTitle={movie.original_title} />
       <MovieInfo movie={movie} />
+      <MovieInfoBar
+        time={movie.runtime}
+        budget={movie.budget}
+        revenue={movie.revenue}
+      />
     </>
   );
 };
