@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import API from '../API';
+import { isPersisted } from '../helper';
 
 export const useMovieFecth = movieId => {
   const [state, setState] = useState({});
@@ -28,7 +29,9 @@ export const useMovieFecth = movieId => {
         setError(true);
       }
     };
+
     fetchMovie();
   }, [movieId]);
+
   return { state, loading, error };
 };

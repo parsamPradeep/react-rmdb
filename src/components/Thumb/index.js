@@ -16,9 +16,9 @@ const Thumb = ({ image, movieId, clickable }) => (
   </div>
 );
 
-Thumb.prototypes={
+Thumb.prototypes = {
   image: PropTypes.string,
   movieId: PropTypes.number,
-  clickable: PropTypes.bool,
-}
+  clickable: PropTypes.bool
+};
 export default Thumb;
